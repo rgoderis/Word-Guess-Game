@@ -30,8 +30,6 @@ function computerRandomWord(){
     hangmanWord = computerChoices[Math.floor(Math.random() * computerChoices.length)].toLowerCase();  
 }
 
-
-
 // create function to reset scores
 function reset(){
     guessLeft = 12;
@@ -70,9 +68,33 @@ document.onkeyup = function(event){
             // updates DOM display
             updateDisplay()
             console.log("you guessed right!!!")
-            // for whatever reason the dashed word array is not updating with the blank word array
+            // guessLeft function isn't firing properly since it is in the for loop 
+            // and decreases for each guess that doesn't match up to every letter in hangmanWord
+        } else {
+            guessLeft--
+            updateDisplay();
         }
-
     }
-}   
+}
+// need guess var to decrease each time a user guesses incorrectly
+
+
+// check to see if there are no more "-" in dashedWord, if so then win var goes up 1 and game resets
+if (dashedWord.indexOf('-') == -1 ){ // if there are no dashes left
+    //win!
+    win++;
+    reset();
+    computerRandomWord();
+    updateDisplay();
+  }else if (guessesLeft <= 0){
+    // when guess var === 0 loss goes up by 1 and game resets
+    loss++;
+    reset();    
+    computerRandomWord();
+    updateDisplay();
+  }
+
+
+
+  
 
