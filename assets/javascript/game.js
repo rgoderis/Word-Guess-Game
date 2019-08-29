@@ -1,8 +1,9 @@
 // create variable to store my values. Wins, userGuess, computerChoices 
 var wins = 0;
 var guessLeft = 12;
-var guessSoFar = []
+var guessSoFar = [];
 var userGuess;
+var hangmanWord;
 
 // Star Wars Character
 var computerChoices = [{
@@ -32,6 +33,9 @@ var computerChoices = [{
 ]
 
 // create function to display the results to page DOM
+function updateDisplay(){
+    document.querySelector("")
+}
 
 // create function for computer to grab random word from array
 
