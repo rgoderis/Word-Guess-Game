@@ -34,7 +34,10 @@ var computerChoices = [{
 
 // create function to display the results to page DOM
 function updateDisplay(){
-    document.querySelector("")
+    document.querySelector("#wins").innerHTML = wins;
+    document.querySelector("#guess-left").innerHTML = guessLeft;
+    document.querySelector("#user-guess").innerHTML = userGuess;
+    document.querySelector("#hangman-word").innerHTML = hangmanWprd;
 }
 
 // create function for computer to grab random word from array
