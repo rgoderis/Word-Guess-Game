@@ -26,7 +26,6 @@ body{
     width: 500px;
     text-overflow: auto;
     object-fit:scale-down;
-    float: right;
-    margin-right: 5%;
+    margin-right: 2%;
     margin-top: 5%;
 }
