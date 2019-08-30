@@ -11,12 +11,25 @@ var startGame = "Press any key to get started"
 
 // Star Wars Character
 // switch to an array
-var computerChoices = ["chewbacca",
-"darthvader",
-"lukeskywalker",
-"hansolo",
-"C3PO",
-"R2D2"]
+var computerChoices = [
+    {   name: "chewbacca",
+        img: ""
+    },
+    {   name: "darthvader",
+        img: ""
+    },
+    {   name: "lukeskywalker",
+        img: ""
+    },
+    {   name: "hansolo",
+        img: ""
+    },
+    {   name: "C3PO",
+        img: ""
+    },
+    {   name: "R2D2",
+        img: ""
+    }]
 
 
 
@@ -33,7 +46,7 @@ function updateDisplay(){
 // create function for computer to grab random word from array
 function computerRandomWord(){
     // create function that will display blank word that is length of hangman word
-    hangmanWord = computerChoices[Math.floor(Math.random() * computerChoices.length)].toLowerCase();  
+    hangmanWord = computerChoices[Math.floor(Math.random() * computerChoices.length)].name.toLowerCase();  
 }
 
 // create function to reset scores
