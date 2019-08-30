@@ -5,7 +5,9 @@ var guessSoFar = [];
 var userGuess;
 var hangmanWord;
 var blankWord = [];
-var dashedWord = ''
+var dashedWord = '';
+var losses = 0
+var startGame = "Press any key to get started"
 
 // Star Wars Character
 // switch to an array
@@ -16,12 +18,16 @@ var computerChoices = ["chewbacca",
 "C3PO",
 "R2D2"]
 
+
+
 // create function to display the results to page DOM
 function updateDisplay(){
+    document.querySelector("#start-game").innerHTML = startGame
     document.querySelector("#wins").innerHTML = wins;
     document.querySelector("#guess-left").innerHTML = guessLeft;
     document.querySelector("#guess-so-far").innerHTML = guessSoFar;
     document.querySelector("#hangman-word").innerHTML = hangmanWordText;
+    document.querySelector("#losses").innerHTML = losses;
 }
 
 // create function for computer to grab random word from array
@@ -35,7 +41,7 @@ function reset(){
     guessLeft = 12;
     guessSoFar = [];
     blankWord = [];
-    dashedWord = ''
+    dashedWord = '';
 }
 
 // calling function for computer to grab a random word from the computer choices array
@@ -59,8 +65,12 @@ updateDisplay();
 
 // create a onkeyup envent function to grab userGuess
 document.onkeyup = function(event){
+    startGame = ""
     userGuess = event.key
-// cycle through hangmanWord
+    // for each guess the guess left decreases and is pushed to the guessSoFar array
+    guessLeft--
+    guessSoFar.push(userGuess)
+    // cycle through hangmanWord
     for(var i = 0; i < hangmanWord.length; i++){
         // check to see if the user guess is a character in the hangman word
         if(userGuess === hangmanWord.charAt(i)){
@@ -72,14 +82,11 @@ document.onkeyup = function(event){
             // updates the hangman word to display as the dashed array text
             hangmanWordText = dashedWord;
             // updates DOM display
-            updateDisplay()
             console.log("you guessed right!!!")
-
-
         }
-
+    }
         // check to see if there are no more "-" in dashedWord, if so then win var goes up 1 and game resets
-        if (dashedWord.indexOf('_') == -1 ){ // if there are no dashes left
+        if (dashedWord.indexOf('_') === -1 ){ // if there are no dashes left
             console.log("there are no more _")
             //win!
             wins++;
@@ -87,27 +94,14 @@ document.onkeyup = function(event){
             reset();
             newBlankWord()
             hangmanWordText = dashedWord;
-            updateDisplay();
         } else if (guessLeft === 0){
+            losses++;
             computerRandomWord();
             reset();
             newBlankWord()
             hangmanWordText = dashedWord;
-            updateDisplay();
             }
-    }
+            
+            updateDisplay()
 
 }
-// need guess var to decrease each time a user guesses incorrectly and push userGuess into guessSoFar
-            // guessLeft isn't firing properly since it is in the for loop 
-            // and decreases for each guess that doesn't match up to every letter in hangmanWord 
-// if(userGuess !== hangmanWord[i]){
-//     guessLeft--
-//     guessSoFar.push(userGuess)
-// }
-
-
-
-
-  
-
