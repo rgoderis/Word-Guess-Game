@@ -34,16 +34,22 @@ function computerRandomWord(){
 function reset(){
     guessLeft = 12;
     guessSoFar = [];
+    blankWord = [];
+    dashedWord = ''
 }
 
 // calling function for computer to grab a random word from the computer choices array
 computerRandomWord();
+newBlankWord();
 
 // pushes _ for each letter in the hangmanWord
-for(var i = 0; i < hangmanWord.length; i++){
-    blankWord.push("_");
-    dashedWord = blankWord.join(" ")
+function newBlankWord(){
+    for(var i = 0; i < hangmanWord.length; i++){
+        blankWord.push("_");
+        dashedWord = blankWord.join(" ")
+    }
 }
+
 
 // sets the dashed word the text that should display in the html as the hangman word
 hangmanWordText = dashedWord
@@ -68,31 +74,45 @@ document.onkeyup = function(event){
             // updates DOM display
             updateDisplay()
             console.log("you guessed right!!!")
-            // guessLeft function isn't firing properly since it is in the for loop 
-            // and decreases for each guess that doesn't match up to every letter in hangmanWord
-        } else {
-            guessLeft--
-            updateDisplay();
+
+            // guessLeft isn't firing properly since it is in the for loop 
+            // and decreases for each guess that doesn't match up to every letter in hangmanWord 
         }
+        if (dashedWord.indexOf('_') == -1 ){ // if there are no dashes left
+            console.log("there are no more _")
+            //win!
+            wins++;
+            computerRandomWord();
+            reset();
+            newBlankWord()
+            hangmanWordText = dashedWord;
+            updateDisplay();
+        } 
+        
     }
 }
-// need guess var to decrease each time a user guesses incorrectly
+// need guess var to decrease each time a user guesses incorrectly and push userGuess into guessSoFar
 
 
 // check to see if there are no more "-" in dashedWord, if so then win var goes up 1 and game resets
-if (dashedWord.indexOf('-') == -1 ){ // if there are no dashes left
-    //win!
-    win++;
-    reset();
-    computerRandomWord();
-    updateDisplay();
-  }else if (guessesLeft <= 0){
-    // when guess var === 0 loss goes up by 1 and game resets
-    loss++;
-    reset();    
-    computerRandomWord();
-    updateDisplay();
-  }
+
+// this also doesn't fire properly, if it's in the for loop it completly breaks the code causing the 
+// letters to display out of order and the game doesn't reset
+
+// if (dashedWord.indexOf('_') == -1 ){ // if there are no dashes left
+//     console.log("there are no more _")
+//     //win!
+//     wins++;
+//     reset();
+//     computerRandomWord();
+//     updateDisplay();
+// }
+//   }else if (guessesLeft <= 0){
+//     // when guess var === 0 game resets
+//     reset();    
+//     computerRandomWord();
+//     updateDisplay();
+//   }
 
 
 
