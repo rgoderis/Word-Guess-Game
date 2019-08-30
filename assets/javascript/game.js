@@ -6,35 +6,37 @@ var userGuess;
 var hangmanWord;
 var blankWord = [];
 var dashedWord = '';
-var losses = 0
-var startGame = "Press any key to get started"
+var losses = 0;
+var startGame = "Press any key to get started";
+var image;
 
 // Star Wars Character
 // switch to an array
 var computerChoices = [
     {   name: "chewbacca",
-        img: ""
+        img: "https://i.kinja-img.com/gawker-media/image/upload/s--CrRo6-ck--/c_scale,f_auto,fl_progressive,q_80,w_800/lm0uzbfa560lytndwz5c.png"
     },
     {   name: "darthvader",
-        img: ""
+        img: "https://img.maximummedia.ie/her_ie/eyJkYXRhIjoie1widXJsXCI6XCJodHRwOlxcXC9cXFwvbWVkaWEtaGVyLm1heGltdW1tZWRpYS5pZS5zMy5hbWF6b25hd3MuY29tXFxcL3dwLWNvbnRlbnRcXFwvdXBsb2Fkc1xcXC8yMDE5XFxcLzAxXFxcLzAxMDk0MTQ4XFxcL3JvZ3VlLW9uZS1kYXJ0aC12YWRlci0wMi5qcGdcIixcIndpZHRoXCI6NzY3LFwiaGVpZ2h0XCI6NDMxLFwiZGVmYXVsdFwiOlwiaHR0cHM6XFxcL1xcXC93d3cuaGVyLmllXFxcL2Fzc2V0c1xcXC9pbWFnZXNcXFwvaGVyXFxcL25vLWltYWdlLnBuZz9pZD0wZDJkNjI3YzA1OWI5ZWRjYWIwZFwiLFwib3B0aW9uc1wiOltdfSIsImhhc2giOiIzZjk5ZjhiMGZhMmJkNWUwMTdkZmE2ZjMxY2U1ZTViMjE5YTA5N2VkIn0=/rogue-one-darth-vader-02.jpg"
     },
     {   name: "lukeskywalker",
-        img: ""
+        img: "https://www.maxim.com/.image/t_share/MTYwMzUwMDc2Njc2MzUxMDU1/luke-skywalker-light-saber-screengrab.jpg"
     },
     {   name: "hansolo",
-        img: ""
+        img: "https://compote.slate.com/images/2b6fb34a-8047-4e17-b3d5-64987519657d.jpg"
     },
     {   name: "C3PO",
-        img: ""
+        img: "https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/46/1479397679-c-3po-see-threepio-68fe125c.jpeg?crop=0.501xw:1.00xh;0.301xw,0&resize=480:*"
     },
     {   name: "R2D2",
-        img: ""
+        img: "https://starwarsblog.starwars.com/wp-content/uploads/2018/08/star-wars-r2-d2-tall-image.jpg"
     }]
 
 
 
 // create function to display the results to page DOM
 function updateDisplay(){
+    document.querySelector("#image").innerHTML = image
     document.querySelector("#start-game").innerHTML = startGame
     document.querySelector("#wins").innerHTML = wins;
     document.querySelector("#guess-left").innerHTML = guessLeft;
@@ -46,7 +48,10 @@ function updateDisplay(){
 // create function for computer to grab random word from array
 function computerRandomWord(){
     // create function that will display blank word that is length of hangman word
-    hangmanWord = computerChoices[Math.floor(Math.random() * computerChoices.length)].name.toLowerCase();  
+    hangman = computerChoices[Math.floor(Math.random() * computerChoices.length)]; 
+    hangmanWord = hangman.name.toLowerCase();
+    hangmanImage = hangman.image
+    console.log(hangmanWord)
 }
 
 // create function to reset scores
@@ -103,7 +108,8 @@ document.onkeyup = function(event){
             console.log("there are no more _")
             //win!
             wins++;
-            startGame = "Impressive, most impressive"
+            startGame = "Impressive... Most impressive"
+            hangmanImage = hangmanWord
             computerRandomWord();
             reset();
             newBlankWord()
