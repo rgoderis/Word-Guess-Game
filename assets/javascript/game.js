@@ -82,7 +82,7 @@ document.onkeyup = function(event){
             // updates the hangman word to display as the dashed array text
             hangmanWordText = dashedWord;
             // updates DOM display
-            console.log("you guessed right!!!")
+            startGame = "The force is strong with this one"
         }
     }
         // check to see if there are no more "-" in dashedWord, if so then win var goes up 1 and game resets
@@ -90,12 +90,14 @@ document.onkeyup = function(event){
             console.log("there are no more _")
             //win!
             wins++;
+            startGame = "Impressive, most impressive"
             computerRandomWord();
             reset();
             newBlankWord()
             hangmanWordText = dashedWord;
         } else if (guessLeft === 0){
             losses++;
+            startGame = "You lost, try again"
             computerRandomWord();
             reset();
             newBlankWord()
