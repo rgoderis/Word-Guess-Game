@@ -5,22 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
+    <link rel="stylesheet" href="assets/images">
     <link rel="stylesheet" href="assets/css/reset.css">
-    <!-- link Bootstrap here -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
+    <div id="header" class="text-center">
+        <h1>Star Wars Hangman</h1>
+        <h3>Are you strong enough with the force to guess the correct word?</h3>
+        <p><span id="start-game"></span></p>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div id="container" class="float-left">
+                <p>Wins: <span id="wins"></span></p>
+                <p>Losses: <span id="losses"></span></p>
+                <p>Current Word</p>
+                <p><span id="hangman-word"></span></p>
+                <p>Number of guesses remaining: <span id="guess-left"></span></p>
+                <p>Letters already guessed <span id="guess-so-far"></span></p>
+            </div>            
+        </div>
+        <div class="col-4">
+            <div id="image" class="float-right"></div>            
+        </div>
+    </div>
 
-    <h1>Hangman</h1>
-    <p><span id="start-game"></span></p>
-    <p>Wins: <span id="wins"></span></p>
-    <p>Losses: <span id="losses"></span></p>
-    <p>Current Word</p>
 
-    <p><span id="hangman-word"></span></p>
-    <p>Number of guesses remaining: <span id="guess-left"></span></p>
-    <p>Letters already guessed <span id="guess-so-far"></span></p>
-    <div id="image"></div>
+
 
     <script src="assets/javascript/game.js"></script>
 </body>

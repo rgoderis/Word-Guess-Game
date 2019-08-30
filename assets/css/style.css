@@ -1,0 +1,27 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    max-width: 1400px;
+}
+body{
+    background-image: url("https://vignette.wikia.nocookie.net/starwars/images/c/cc/Star-wars-logo-new-tall.jpg/revision/latest?cb=20190313021755");
+
+}
+
+#header {
+    color: yellow;
+}
+
+#container{
+    border: 1px solid yellow;
+    color: yellow;
+    padding: 1em;
+}
+
+
+#image{
+    height: 500px;
+    width: 500px;
+    text-overflow: auto;
+    object-fit:scale-down;
+}

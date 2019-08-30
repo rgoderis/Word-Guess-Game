@@ -33,7 +33,7 @@ var computerChoices = [
     }]
 
 function displayImage(){
-    document.querySelector("#image").innerHTML = ("<img src= '"+image + "' alt='hangman image' img>")
+    document.querySelector("#image").innerHTML = ("<img src= '"+image + "' alt='hangman image' class='rounded img-fluid'img>")
 }
 
 // create function to display the results to page DOM
