@@ -78,6 +78,7 @@ document.onkeyup = function(event){
             // guessLeft isn't firing properly since it is in the for loop 
             // and decreases for each guess that doesn't match up to every letter in hangmanWord 
         }
+        // check to see if there are no more "-" in dashedWord, if so then win var goes up 1 and game resets
         if (dashedWord.indexOf('_') == -1 ){ // if there are no dashes left
             console.log("there are no more _")
             //win!
@@ -87,32 +88,19 @@ document.onkeyup = function(event){
             newBlankWord()
             hangmanWordText = dashedWord;
             updateDisplay();
-        } 
+        } else if (guessesLeft <= 0){
+            computerRandomWord();
+            reset();
+            newBlankWord()
+            hangmanWordText = dashedWord;
+            updateDisplay();
+            }
         
     }
 }
 // need guess var to decrease each time a user guesses incorrectly and push userGuess into guessSoFar
 
 
-// check to see if there are no more "-" in dashedWord, if so then win var goes up 1 and game resets
-
-// this also doesn't fire properly, if it's in the for loop it completly breaks the code causing the 
-// letters to display out of order and the game doesn't reset
-
-// if (dashedWord.indexOf('_') == -1 ){ // if there are no dashes left
-//     console.log("there are no more _")
-//     //win!
-//     wins++;
-//     reset();
-//     computerRandomWord();
-//     updateDisplay();
-// }
-//   }else if (guessesLeft <= 0){
-//     // when guess var === 0 game resets
-//     reset();    
-//     computerRandomWord();
-//     updateDisplay();
-//   }
 
 
 
