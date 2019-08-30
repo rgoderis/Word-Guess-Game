@@ -33,7 +33,7 @@ var computerChoices = [
     }]
 
 function displayImage(){
-    document.querySelector("#image").innerHTML = image
+    document.querySelector("#image").innerHTML = ("<img src= '"+image + "' alt='hangman image' img>")
 }
 
 // create function to display the results to page DOM
@@ -51,7 +51,7 @@ function computerRandomWord(){
     // create function that will display blank word that is length of hangman word
     hangman = computerChoices[Math.floor(Math.random() * computerChoices.length)]; 
     hangmanWord = hangman.name.toLowerCase();
-    hangmanImage = hangman.img
+    image = hangman.img
     console.log(hangmanWord)
 }
 
@@ -110,7 +110,7 @@ document.onkeyup = function(event){
             //win!
             wins++;
             startGame = "Impressive... Most impressive"
-            hangmanImage = hangmanWord
+            displayImage();
             computerRandomWord();
             reset();
             newBlankWord()
