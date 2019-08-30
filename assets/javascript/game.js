@@ -32,11 +32,12 @@ var computerChoices = [
         img: "https://starwarsblog.starwars.com/wp-content/uploads/2018/08/star-wars-r2-d2-tall-image.jpg"
     }]
 
-
+function displayImage(){
+    document.querySelector("#image").innerHTML = image
+}
 
 // create function to display the results to page DOM
 function updateDisplay(){
-    document.querySelector("#image").innerHTML = image
     document.querySelector("#start-game").innerHTML = startGame
     document.querySelector("#wins").innerHTML = wins;
     document.querySelector("#guess-left").innerHTML = guessLeft;
@@ -50,7 +51,7 @@ function computerRandomWord(){
     // create function that will display blank word that is length of hangman word
     hangman = computerChoices[Math.floor(Math.random() * computerChoices.length)]; 
     hangmanWord = hangman.name.toLowerCase();
-    hangmanImage = hangman.image
+    hangmanImage = hangman.img
     console.log(hangmanWord)
 }
 
