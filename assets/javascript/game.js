@@ -11,7 +11,6 @@ var startGame = "Press any key to get started";
 var image;
 
 // Star Wars Character
-// switch to an array
 var computerChoices = [
     {   name: "chewbacca",
         img: "assets/images/Chewbacca.gif"
@@ -103,9 +102,14 @@ function reset(){
     dashedWord = '';
 }
 
+// Variable selecting audio file
+var music = document.getElementById("background-music");
+
 // calling function for computer to grab a random word from the computer choices array
 computerRandomWord();
 newBlankWord();
+// causes background music to play
+// audio.play();
 
 // pushes _ for each letter in the hangmanWord
 function newBlankWord(){
@@ -129,6 +133,8 @@ document.onkeyup = function(event){
     // for each guess the guess left decreases and is pushed to the guessSoFar array
     guessLeft--
     guessSoFar.push(userGuess)
+    // causes music to start when a key is pressed
+    music.play()
     // cycle through hangmanWord
     for(var i = 0; i < hangmanWord.length; i++){
         // check to see if the user guess is a character in the hangman word
