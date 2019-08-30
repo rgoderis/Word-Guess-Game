@@ -14,22 +14,62 @@ var image;
 // switch to an array
 var computerChoices = [
     {   name: "chewbacca",
-        img: "https://i.kinja-img.com/gawker-media/image/upload/s--CrRo6-ck--/c_scale,f_auto,fl_progressive,q_80,w_800/lm0uzbfa560lytndwz5c.png"
+        img: "assets/images/Chewbacca.gif"
     },
     {   name: "darthvader",
-        img: "https://img.maximummedia.ie/her_ie/eyJkYXRhIjoie1widXJsXCI6XCJodHRwOlxcXC9cXFwvbWVkaWEtaGVyLm1heGltdW1tZWRpYS5pZS5zMy5hbWF6b25hd3MuY29tXFxcL3dwLWNvbnRlbnRcXFwvdXBsb2Fkc1xcXC8yMDE5XFxcLzAxXFxcLzAxMDk0MTQ4XFxcL3JvZ3VlLW9uZS1kYXJ0aC12YWRlci0wMi5qcGdcIixcIndpZHRoXCI6NzY3LFwiaGVpZ2h0XCI6NDMxLFwiZGVmYXVsdFwiOlwiaHR0cHM6XFxcL1xcXC93d3cuaGVyLmllXFxcL2Fzc2V0c1xcXC9pbWFnZXNcXFwvaGVyXFxcL25vLWltYWdlLnBuZz9pZD0wZDJkNjI3YzA1OWI5ZWRjYWIwZFwiLFwib3B0aW9uc1wiOltdfSIsImhhc2giOiIzZjk5ZjhiMGZhMmJkNWUwMTdkZmE2ZjMxY2U1ZTViMjE5YTA5N2VkIn0=/rogue-one-darth-vader-02.jpg"
+        img: "assets/images/Darth-Vader.gif"
     },
     {   name: "lukeskywalker",
-        img: "https://www.maxim.com/.image/t_share/MTYwMzUwMDc2Njc2MzUxMDU1/luke-skywalker-light-saber-screengrab.jpg"
+        img: "assets/images/Luke-Skywalker.gif"
     },
     {   name: "hansolo",
-        img: "https://compote.slate.com/images/2b6fb34a-8047-4e17-b3d5-64987519657d.jpg"
+        img: "assets/images/Han-Solo.gif"
     },
     {   name: "C3PO",
-        img: "https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/46/1479397679-c-3po-see-threepio-68fe125c.jpeg?crop=0.501xw:1.00xh;0.301xw,0&resize=480:*"
+        img: "assets/images/c3po.gif"
     },
     {   name: "R2D2",
-        img: "https://starwarsblog.starwars.com/wp-content/uploads/2018/08/star-wars-r2-d2-tall-image.jpg"
+        img: "assets/images/R2D2.gif"
+    },
+    {
+        name: "ackbar",
+        img: "assets/images/Ackbar.gif"
+    },
+    {
+        name: "bobafett",
+        img: "assets/images/Boba-Fett.gif"
+    },
+    {
+        name: "Lando",
+        img: "assets/images/Lando.gif"
+    },
+    {
+        name: "Leia",
+        img: "assets/images/Leia.gif"
+    },
+    {
+        name: "Palpatine",
+        img: "assets/images/Palpatine.gif"
+    },
+    {
+        name: "Porkins",
+        img: "assets/images/Porkins.gif"
+    },
+    {
+        name: "StarDestroyer",
+        img: "assets/images/Star-Destroyer.gif"
+    },
+    {
+        name: "Stormtrooper",
+        img: "assets/images/Stormtrooper.gif"
+    },
+    {
+        name: "WedgeAntilles",
+        img: "assets/images/Wedge-Antilles.gif"
+    },
+    {
+        name: "Yoda",
+        img: "assets/images/Yoda.gif"
     }]
 
 function displayImage(){

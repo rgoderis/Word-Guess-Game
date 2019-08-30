@@ -16,7 +16,8 @@ body{
     border: 1px solid yellow;
     color: yellow;
     padding: 1em;
-    margin-left: 5%
+    margin-left: 5%;
+    margin-top: 5%;
 }
 
 
@@ -27,4 +28,5 @@ body{
     object-fit:scale-down;
     float: right;
     margin-right: 5%;
+    margin-top: 5%;
 }
