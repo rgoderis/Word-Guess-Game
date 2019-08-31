@@ -64,7 +64,7 @@ var computerChoices = [
     },
     {
         name: "WedgeAntilles",
-        img: "assets/images/Wedge-Antilles.jpeg"
+        img: "assets/images/Wedge-Antilles.gif"
     },
     {
         name: "Yoda",
